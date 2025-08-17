@@ -19,8 +19,8 @@ export default function Register({ onRegisterSuccess, switchToLogin }) {
       alert('Registration successful! Redirecting to login...');
       if (onRegisterSuccess) onRegisterSuccess();
     } catch (err) {
-      console.error(err);
-      alert('Registration failed');
+      console.error('Register error:', err.response?.data || err.message);
+  alert(err.response?.data?.message || 'Registration failed');
     }
   };
 
